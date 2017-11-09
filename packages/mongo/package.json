@@ -20,6 +20,7 @@
     "cachegoose": "^3.0.2",
     "lodash": "^4.17.4",
     "mongoose": "^4.11.9",
-    "mongoose-fill": "^1.6.0"
+    "mongoose-fill": "^1.6.0",
+    "mongoose-patch-history": "^1.1.7"
   }
 }

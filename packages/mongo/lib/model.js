@@ -20,7 +20,6 @@ module.exports = class MongooseModel {
         getters: true,
         transform: transform.bind(this)
       },
-      id: false,
       versionKey: false,
       timestamps: {
         createdAt: 'created_at',
