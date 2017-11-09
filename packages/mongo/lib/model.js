@@ -1,4 +1,5 @@
 const Mongoose = require('mongoose')
+const patchHistory = require('mongoose-patch-history').default
 const _ = require('lodash')
 
 module.exports = class MongooseModel {
@@ -33,6 +34,8 @@ module.exports = class MongooseModel {
 
     // Add methods from class to schema
     schema.plugin(wrap, this)
+    // add mongoose patch history
+    schema.plugin(patchHistory, {mongoose: Mongoose, name: `${_name}Patches`})
 
     // Create and return a mongoose model using connection
     let model = _connection.model(_name, schema, _collection/* optional */, false/* skipInit */)
